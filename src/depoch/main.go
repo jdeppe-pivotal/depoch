@@ -65,7 +65,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("Unable to load timezone %s - %v", timezone, err)
 	}
-	fmt.Printf("location - %v\n", location)
 
 	var inputs []*os.File
 	if len(flag.Args()) > 0 {
