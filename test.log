@@ -1,0 +1,15 @@
+{"timestamp":"1479847503.794835567","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"667d706c-993c-4dcd-9154-fb90d29903b4"}}
+{"timestamp":"1479847503.794862747","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"fe6073d0-5d6e-4076-9387-f8173b015191"}}
+{"timestamp":"1479847503.794888496","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"a3f3e97c-fa9f-448e-9c26-61b926f1fabe"}}
+{"timestamp":"1479847503.794907331","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"c8645782-7bfd-4669-9498-689915c65452"}}
+{"timestamp":"1479847503.794926643","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"667d706c-fa72-46a5-81fc-fea39723b7f6"}}
+{"timestamp":"1479847503.794944763","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"fe6073d0-6d44-4b68-a4f7-61d6608a5d27"}}
+{"timestamp":"1479847503.794960737","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"667d706c-43df-4306-b87c-e461df93aeba"}}
+{"timestamp":"1479847503.794976950","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"fe6073d0-6cc2-4cc6-8ade-01fa6f97624e"}}
+{"timestamp":"1479847503.794992208","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"fe6073d0-f3a2-4d5e-a742-07c8186757a5"}}
+{"timestamp":"1479847503.795006990","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"667d706c-993c-4dcd-9154-fb90d29903b4"}}
+{"timestamp":"1479847503.795034170","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"fe6073d0-a4bb-435c-a282-e9beecca87a3"}}
+{"timestamp":"1479847503.795058250","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"fe6073d0-6d44-4b68-a4f7-61d6608a5d27"}}
+{"timestamp":"1479847503.795081377","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"667d706c-993c-4dcd-9154-fb90d29903b4"}}
+{"timestamp":"1479847503.795104742","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"667d706c-bbd2-48cb-b734-34da92434d17"}}
+{"timestamp":"1479847503.795126200","source":"atc","message":"atc.baggage-collector.could-not-locate-worker","log_level":1,"data":{"session":"16","worker-id":"fe6073d0-c2c7-46bb-beff-e74344d61475"}}
