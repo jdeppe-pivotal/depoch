@@ -9,6 +9,7 @@ import (
 	"encoding/json"
 	"strings"
 	"strconv"
+	"flag"
 )
 
 // Looks like:
@@ -26,7 +27,9 @@ type EpochTime struct {
 }
 
 var nullTime = "null"
-var timeFormat = "2006/01/02 15:04:05.999999 -0700"
+var timeFormat = "2006/01/02 15:04:05.999999 (MST)"
+var timezone string
+var location *time.Location
 
 func (ct *EpochTime) UnmarshalJSON(b []byte) (err error) {
 	s := strings.Trim(string(b), "\"")
@@ -40,7 +43,8 @@ func (ct *EpochTime) UnmarshalJSON(b []byte) (err error) {
 	if err != nil {
 		log.Fatalf("Unable to convert time %s - %v", string(b), err)
 	}
-	ct.Time = time.Unix(epochSec, epochNsec).Format(timeFormat)
+	ct.Time = time.Unix(epochSec, epochNsec).In(location).Format(timeFormat)
+
 	return
 }
 
@@ -52,25 +56,50 @@ func (ct *EpochTime) MarshalJSON() ([]byte, error) {
 }
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
-	for scanner.Scan() {
-		line := &Line{}
+	var err error
 
-		err := json.Unmarshal(scanner.Bytes(), line)
-		if err != nil {
-			log.Fatalf("Unable to process line %s - %v", scanner.Text(), err)
+	flag.StringVar(&timezone, "z", "UTC", "Timezone")
+	flag.Parse()
+
+	location, err = time.LoadLocation(timezone)
+	if err != nil {
+		log.Fatalf("Unable to load timezone %s - %v", timezone, err)
+	}
+	fmt.Printf("location - %v\n", location)
+
+	var inputs []*os.File
+	if len(flag.Args()) > 0 {
+		for _, name := range flag.Args() {
+			f, err := os.Open(name)
+			if err != nil {
+				log.Fatalf("Unable to open file %s: %v", name, err)
+			}
+			inputs = append(inputs, f)
 		}
-
-		raw, err := json.Marshal(line)
-		if err != nil {
-			log.Fatalf("Unable to unmarshal line %s - %v", scanner.Text(), err)
-		}
-
-		fmt.Println(string(raw))
-		//fmt.Printf("%v\n", line)
+	} else {
+		inputs = append(inputs, os.Stdin)
 	}
 
-	if err := scanner.Err(); err != nil {
-		log.Fatal(err)
+	for _, file := range inputs {
+		scanner := bufio.NewScanner(file)
+		for scanner.Scan() {
+			line := &Line{}
+
+			err := json.Unmarshal(scanner.Bytes(), line)
+			if err != nil {
+				log.Fatalf("Unable to process line %s - %v", scanner.Text(), err)
+			}
+
+			raw, err := json.Marshal(line)
+			if err != nil {
+				log.Fatalf("Unable to unmarshal line %s - %v", scanner.Text(), err)
+			}
+
+			fmt.Println(string(raw))
+		}
+
+		if err := scanner.Err(); err != nil {
+			log.Fatal(err)
+		}
 	}
 }
