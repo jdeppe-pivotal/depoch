@@ -21,3 +21,9 @@ Download binaries [here](https://github.com/jdeppe-pivotal/depoch/releases).
 ## Build
 
 `go build github.com/jdeppe-pivotal/depoch/...`
+
+## TODO
+
+Should probably consider just using regex matching to pull out the timestamps as
+the JSON un/marshalling might be too heavy. Also, using regexes would make it
+more flexible.
