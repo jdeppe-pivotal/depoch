@@ -17,3 +17,7 @@ Will be converted to this:
 Using the `-z` option you can also pass in a timezone string and the times will be displayed appropriately.
 
 Download binaries [here](https://github.com/jdeppe-pivotal/depoch/releases).
+
+## Build
+
+`go build github.com/jdeppe-pivotal/depoch/...`
